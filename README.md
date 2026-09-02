@@ -21,11 +21,20 @@ Official website and professional portfolio for **Adrián Sosa** — Technology 
 ├── .nojekyll           # Bypasses Jekyll processing on GitHub Pages
 ├── CNAME               # Custom domain configuration (adriansosa.net)
 ├── README.md           # Project documentation
-├── index.html          # Main landing page
+├── favicon.ico         # Legacy favicon fallback
+├── favicon.svg         # Modern vector favicon
+├── index.html          # Main landing page (SEO & Open Graph enabled)
 ├── privacy.html        # Privacy notice and policy
+├── robots.txt          # Search engine crawler instructions
+├── sitemap.xml         # XML Sitemap for search engines
 ├── terms.html          # Terms of service
 ├── css/
 │   └── style.css       # Core stylesheet and responsive design rules
+├── img/
+│   ├── apple-touch-icon.png
+│   ├── favicon-32x32.png
+│   ├── favicon-512x512.png
+│   └── og-card.png     # Open Graph / Twitter Card social share preview
 └── js/
     └── script.js       # Client-side interactions and animations
 ```
