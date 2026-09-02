@@ -119,13 +119,30 @@ a {
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
 .bar {
     width: 25px;
     height: 3px;
     background-color: var(--text-primary);
-    transition: 0.3s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */

@@ -5,18 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-    });
+    if (mobileMenuBtn && navMenu) {
+        const toggleMenu = (open) => {
+            const isActive = open !== undefined ? open : !navMenu.classList.contains('active');
+            navMenu.classList.toggle('active', isActive);
+            mobileMenuBtn.classList.toggle('active', isActive);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isActive));
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        };
 
-    // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.addEventListener('click', () => toggleMenu());
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
         });
-    });
+
+        // Close mobile menu when resizing to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                toggleMenu(false);
+            }
+        });
+    }
 
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

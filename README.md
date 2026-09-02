@@ -1,42 +1,70 @@
-# Deployment Instructions
+# adriansosa.net
 
-This project is a static export of a WordPress site, ready for GitHub Pages.
+Official website and professional portfolio for **Adrián Sosa** — Technology Consultant & Digital Strategist specializing in Cybersecurity, Artificial Intelligence, and Automation.
 
-## Prerequisites
-- A GitHub account.
-- Git installed on your machine.
+🌐 **Live URL:** [https://adriansosa.net](https://adriansosa.net)
 
-## Steps to Deploy
+---
 
-1.  **Create a Repository on GitHub**
-    - Go to [GitHub.com/new](https://github.com/new).
-    - Name your repository (e.g., `my-website` or `username.github.io`).
-    - *Note: If you name it `username.github.io`, it will be served at that root URL. If you name it something else, it will be at `username.github.io/repository-name/`.*
+## 🛠️ Tech Stack
 
-2.  **Push the Code**
-    Open a terminal in this directory and run:
+- **HTML5:** Semantic markup, accessibility features, and structured metadata.
+- **CSS3:** Custom responsive layout, modern dark theme, Glassmorphism effects, and smooth animations without external CSS frameworks.
+- **JavaScript (ES6+):** Vanilla JavaScript for menu navigation, intersection observers, and smooth interactions without runtime dependencies.
+- **Hosting:** GitHub Pages with custom domain (`CNAME`).
 
-    ```bash
-    git add .
-    git commit -m "Initial static site export"
-    git branch -M main
-    git remote add origin https://github.com/asosam91/adriansosa-net.git
-    git push -u origin gh-pages
-    ```
+---
 
-    *If you are already on the `gh-pages` branch (which this folder is configured for), you can simply run:*
-    ```bash
-    git push -u origin gh-pages
-    ```
+## 📁 Project Structure
 
-3.  **Configure GitHub Pages**
-    - Go to your repository settings on GitHub.
-    - Click on **Pages** in the left sidebar.
-    - Under **Build and deployment**, select **Source** -> **Deploy from a branch**.
-    - Select **main** branch and **/(root)** folder.
-    - Click **Save**.
+```text
+├── .nojekyll           # Bypasses Jekyll processing on GitHub Pages
+├── CNAME               # Custom domain configuration (adriansosa.net)
+├── README.md           # Project documentation
+├── index.html          # Main landing page
+├── privacy.html        # Privacy notice and policy
+├── terms.html          # Terms of service
+├── css/
+│   └── style.css       # Core stylesheet and responsive design rules
+└── js/
+    └── script.js       # Client-side interactions and animations
+```
 
-## Troubleshooting
-- **Images/Styles missing?**
-    - If your site is in a subdirectory (e.g., `user.github.io/repo/`) and links are absolute (e.g., `/wp-content/...`), they might break.
-    - Best practice: Host at `username.github.io` (a User Page repo) to keep root paths working, OR find and replace `/wp-content/` with `wp-content/` (relative path) in your HTML files.
+---
+
+## 💻 Local Development
+
+To run and preview the website locally without any build step:
+
+### Option 1: Python (Built-in HTTP Server)
+```bash
+python -m http.server 8000
+```
+Then visit `http://localhost:8000` in your browser.
+
+### Option 2: VS Code Live Server
+Right-click `index.html` and select **"Open with Live Server"**.
+
+---
+
+## 🚀 Deployment
+
+The site is configured to deploy automatically via GitHub Pages:
+
+1. Stage and commit your changes:
+   ```bash
+   git add .
+   git commit -m "Update site content"
+   ```
+2. Push directly to the deployment branch:
+   ```bash
+   git push origin gh-pages
+   ```
+
+---
+
+## 📬 Contact & Inquiries
+
+- **Website:** [adriansosa.net](https://adriansosa.net)
+- **Email:** [contact@adriansosa.net](mailto:contact@adriansosa.net)
+- **LinkedIn:** [adrian-sosa-medellin](https://www.linkedin.com/in/adrian-sosa-medellin)
